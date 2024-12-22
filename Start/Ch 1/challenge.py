@@ -27,4 +27,3 @@ print(msft.get_description())
 print(goog.get_description())
 print(meta.get_description())
 print(amzn.get_description())
-
