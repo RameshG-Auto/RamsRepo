@@ -8,13 +8,16 @@
 #%%
 
 from dataclasses import dataclass
+from abc import ABC, abstractmethod
 
 @dataclass
-class Asset():
+class Asset(ABC):
     price: float
 
-    def __str__(self):
-        pass
+    # @abstractmethod
+    # def __str__(self):
+    #     pass
+    @abstractmethod
     def __lt__(self, other):
         pass
     
@@ -23,8 +26,8 @@ class Stock(Asset):
     ticker: str
     company: str
 
-    def __str__(self):
-        return f"{self.ticker}: {self.company} -- ${self.price}"
+    # def __str__(self):
+    #     return f"{self.ticker}: {self.company} -- ${self.price}"
 
     def __lt__(self, other):
         return self.price < other.price
@@ -34,8 +37,8 @@ class Bond(Asset):
     duration: int
     yieldamt: float
 
-    def __str__(self):
-        return f"{self.description}: {self.duration}yr : ${self.price} : {self.yieldamt}%"
+    # def __str__(self):
+    #     return f"{self.description}: {self.duration}yr : ${self.price} : {self.yieldamt}%"
     
     def __lt__(self, other):
         return self.yieldamt < other.yieldamt
