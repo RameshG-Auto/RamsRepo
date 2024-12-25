@@ -9,6 +9,8 @@
 # And a method get_description() which returns a string in the form
 # of "Ticker: Company -- $Price"
 #%%
+
+from abc import ABC, abstractmethod
 class Stock:
     def __init__(self, ticker, price, company):
         self.ticker = ticker
@@ -27,3 +29,5 @@ print(msft.get_description())
 print(goog.get_description())
 print(meta.get_description())
 print(amzn.get_description())
+
+# %%
